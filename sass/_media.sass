@@ -1,0 +1,569 @@
+@media screen and (max-width: 1200px)
+  section.first
+    .slide_3, .slide_2
+      background-position-y: initial
+  
+  section.offer
+    .content_wrap
+      flex-direction: row
+      flex-wrap: wrap
+      .category_item
+        width: 200px
+        height: 260px
+        .category_title
+          font-size: 16px
+        & img
+          width: 100%
+
+@media screen and (max-width: 992px)
+  header
+    height: 108px
+    .top
+      .container
+        .employment
+          font-size: 12px
+        .location p
+          font-size: 12px
+          margin-left: 2px
+        .number p
+          font-size: 14px
+          margin-left: 2px
+    .bottom
+      .logo
+        width: 180px
+      & nav 
+        & ul
+          .current_page::after
+            width: 24px
+          & li
+            margin-left: 30px
+            &:hover
+              & a:after
+                width: 24px
+            & a
+              font-size: 14px
+                
+  section.first
+    height: calc(100vh - 108px)
+    & h1
+      font-size: 36px
+      width: 80%
+    .description
+      font-size: 16px
+      width: 400px
+
+  .title
+    font-size: 30px
+
+  section.offer
+    padding-bottom: 30px
+    .title_wrap
+      height: 100px
+      .title_description
+        width: 80%
+        font-size: 16px
+    .content_wrap
+      .category_item
+        margin-bottom: 33px
+
+  section.delivery
+    .delivery_text
+      width: 80%
+      font-size: 16px
+    #delivery_form 
+      width: 310px
+      .form_title 
+        font-size: 20px
+
+  .item
+    height: 255px
+    width: 200px
+    & img
+      width: 100%
+    .item_title
+      font-size: 16px
+
+  section.payment
+    padding: 45px 0px
+    .payment_wrap .payment_item .payment_text
+      font-size: 18px 
+
+  section.reviews
+    #reviews_slider
+      margin: 30px 0px
+      .tns-item
+        padding: 0 135px
+        font-size: 18px
+    .controls_container
+      .next_btn:after
+        background-size: cover
+        width: 64px
+        height: 64px
+        bottom: -50px
+      .prev_btn:before
+        background-size: cover
+        width: 64px
+        height: 64px
+        top: -50px
+    .reviews_btn a
+      font-size: 16px
+
+  section.contacts
+    #contacts_map
+      .contacts_form
+        height: 500px
+        width: 350px
+        top: -30px
+        .form_title
+          font-size: 20px
+
+  footer
+    .container
+      .logo
+        width: 180px
+      .employment,
+      .copyright
+        font-size: 12px
+
+  // category
+  .category_item
+    height: 240px
+    width: 180px
+    &:hover
+      .category_hover
+        font-size: 20px
+    & img
+      width: 100%
+    .category_title
+      font-size: 16px
+
+  section.category
+    & h1
+      margin-left: 24px
+    .category_wrap
+      .category_item
+        margin-left: 24px
+        margin-bottom: 24px
+
+  // item
+  .item_container
+    .item_wrap,
+    .item_specification-wrap
+      margin-left: 24px
+    .item_wrap
+      flex-direction: column
+      & img
+        margin-right: 0
+      .item_info
+        margin-bottom: 20px
+
+@media screen and (max-width: 768px)
+  .category_item 
+    .category_title
+      margin-top: 0
+    &:hover
+      .category_hover
+        font-size: 18px
+
+  .item
+    height: 190px
+    width: 140px
+    .item_title
+      font-size: 12px
+      margin-top: 0
+    .item_price
+      font-size: 12px
+    &:hover
+      .item_hover
+        font-size: 16px
+
+  header
+    .top
+      .container
+        .employment
+          max-width: 200px
+        .number p
+          font-size: 12px
+    .bottom
+      nav:not(:last-child)
+        display: none
+      .container
+        #burger
+          display: block
+
+  section.first
+    & h1
+      font-size: 30px
+      width: 90%
+    .description
+      width: 80%
+    .first_btn
+      font-size: 16px
+    #dots
+      width: 80px
+      div
+        width: 14px
+        height: 14px
+    #first_fixed-el
+      bottom: 64px
+      .download_price
+        width: 150px
+        & a
+          font-size: 12px
+
+  section.offer
+    .content_wrap .category_item
+      height: 235px
+
+  section.delivery
+    background-position-x: -200px
+      
+  section.payment
+    .payment_wrap .payment_item .payment_text
+      font-size: 14px
+
+  section.reviews
+    #reviews_slider
+      .tns-item
+        padding: 0 80px
+        font-size: 16px
+    .reviews_btn a
+      font-size: 14px
+    .controls_container
+      padding: 0px 10px
+      left: 0
+      right: 0
+      .prev_btn::before
+        left: 90px
+      .next_btn::after
+        right: 90px
+    
+  section.contacts
+    #contacts_map .contacts_form
+      width: 320px
+
+  footer
+    .container
+      .employment
+        text-align: center
+      .copyright
+        text-align: right
+  
+  // category
+  section.category
+    padding-top: 0
+    & h1
+      margin-left: 0
+      font-size: 20px
+    .category_wrap
+      justify-content: space-around
+      .category_item
+        margin-left: 0
+        height: 215px
+        .category_title
+          font-size: 14px
+    .filter_dropdown
+      cursor: pointer
+      background-color: $red
+      color: $grey
+      display: flex
+      align-items: center
+      min-width: 140px
+      height: 36px
+      justify-content: center
+      font-weight: bold
+      & svg
+        width: 16px
+        height: 16px
+        fill: $grey
+        margin-left: 10px
+    .container
+      flex-direction: column
+      .filter_container
+        padding-top: 0
+        position: relative
+        flex-direction: row
+        .stock
+          text-align: right
+        .filter
+          display: none
+          position: absolute
+          z-index: 10
+          top: 36px
+          & ul
+            & a
+              margin-bottom: 0
+              &:hover
+                opacity: 1
+  
+  #category_active .item
+      margin-left: 0
+
+  // item
+  .item_container
+    .item_wrap,
+    .item_specification-wrap
+      margin-left: 0
+    .item_wrap
+      .item_info
+        font-size: 16px
+        margin-top: 10px
+    .item_description-wrap 
+      .item_price
+        .price_title
+          font-size: 20px
+    .item_price,
+    .item_specification-wrap
+      font-size: 16px
+    .item_specification-wrap
+      .specification_title
+        font-size: 20px
+
+@media screen and (max-width: 520px)
+  .title
+    font-size: 24px
+
+  form
+    .label
+      font-size: 12px
+    & button
+      font-size: 12px
+      width: 130px
+      height: 36px
+
+  header
+    .top
+      .container
+        .employment
+          max-width: 150px
+        .location p
+          width: 70px
+  
+  section.offer
+    .title_wrap
+      height: 80px
+      .title_description
+        font-size: 14px
+      .title_line
+        width: 64px
+        height: 2px
+
+  section.delivery
+    .delivery_text
+      font-size: 14px
+
+  section.payment
+    padding: 25px 0px
+    .payment_wrap
+      margin-top: 40px
+
+  section.reviews
+    #reviews_slider
+      .tns-item
+        padding: 0 30px
+
+  section.contacts
+    #contacts_map
+      .contacts_form
+        padding: 28px 30px
+        width: 300px
+        .contacts_wrap p
+          font-size: 16px
+
+@media screen and (max-width: 460px)
+  header
+    .top
+      .container
+        .location
+          display: none
+        .vk
+          flex-grow: 1
+          justify-content: end
+
+  section.first 
+    & h1
+      font-size: 24px
+      width: 100%
+    .first_btn
+      font-size: 14px
+    .description
+      font-size: 14px
+      margin-bottom: 40px
+    #first_fixed-el
+      .download_price
+        display: none
+    
+  section.offer
+    padding-top: 25px
+    padding-bottom: 10px
+    .title_wrap
+      .title_description
+        width: 100%
+    .content_wrap
+      justify-content: space-around
+      .category_item
+        width: 145px
+        height: 180px
+        &:hover
+          .category_hover
+            font-size: 16px 
+        .category_title
+          font-size: 12px
+          height: 42px
+
+  section.delivery
+    padding-top: 25px
+    padding-bottom: 40px
+    #delivery_form
+      margin: auto
+
+  section.hits
+    padding-top: 25px
+    padding-bottom: 10px
+    .hits_item-wrap
+      flex-direction: row
+      flex-wrap: wrap
+      .item
+        margin-bottom: 20px
+
+  section.payment
+    .payment_wrap
+      justify-content: space-around
+      flex-wrap: wrap
+      .payment_item
+        width: 125px
+
+  section.reviews
+    padding: 25px 0
+    #reviews_slider
+      .tns-item
+        padding: 0 25px
+        font-size: 14px
+    .controls_container
+      .next_btn::after
+        right: 45px
+      .prev_btn::before
+        left: 45px
+
+  section.contacts
+    padding-top: 25px
+    padding-bottom: 0
+    #contacts_map
+      .contacts_form
+        position: relative
+        padding: 28px 60px
+        width: 100%
+        margin-bottom: 20px
+
+  footer
+    .container
+      .employment
+        display: none
+  
+  // category
+  section.category
+    .filter_dropdown
+      min-width: 115px
+      font-size: 14px
+      & svg
+        width: 12px
+        height: 12px
+    .category_wrap
+      .category_item
+        width: 160px
+        height: 192px
+        .category_title
+          font-size: 12px
+    .container
+      .filter_container
+        .stock
+          .stock_title
+            font-size: 16px
+          .stock_info
+            font-size: 12px
+
+  // item
+
+  .item_container
+    .item_description-wrap
+      .item_info
+        font-size: 14px
+    .item_price
+      font-size: 14px
+      .price_title
+        font-size: 18px
+    .item_specification-wrap
+      font-size: 14px
+      .specification_title
+        font-size: 20px
+
+@media screen and (max-width: 360px)
+  .title
+    font-size: 20px
+
+  header
+    .top
+      .container
+        .employment
+          font-size: 10px
+          max-width: 130px
+
+  section.first
+    #first_fixed-el
+      bottom: 35px
+    #dots
+      bottom: 35px
+    .description
+      width: 100%
+
+  section.offer
+    .title_wrap
+      .title_description
+        font-size: 12px
+    .content_wrap
+      .category_item
+        width: 135px
+        height: 165px
+
+  section.delivery
+    .delivery_text
+      width: 100% 
+      font-size: 12px
+    #delivery_form
+      width: 95%
+      height: initial
+      padding: 24px
+      .form_title
+        font-size: 18px
+
+  section.payment
+    .payment_wrap
+      .payment_item
+        .payment_text
+          height: 80px
+
+  section.contacts
+    #contacts_map
+      .contacts_form
+        padding: 20px 30px
+        width: 100%
+        margin-bottom: 0
+        .form_wrap
+          margin-top: 50px
+        .form_title
+          font-size: 18px
+
+  // category
+  section.category
+    .category_wrap
+      .category_item
+        width: 135px
+        height: 165px
+        .category_title
+          font-size: 12px
+          height: 42px
+
+  // item
+  .item_container
+    .item_wrap img
+      width: 100%

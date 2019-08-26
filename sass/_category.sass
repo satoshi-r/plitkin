@@ -1,0 +1,75 @@
+@keyframes filter_hover
+  0%
+    background: $grey
+  100%
+    background: $red
+
+section.category
+  display: flex
+  flex-direction: row
+  padding-top: 50px
+  .filter_dropdown
+    display: none
+  .container
+    display: flex
+    .filter_container
+      padding-top: 60px
+      display: flex
+      flex-direction: column
+      .filter
+        & ul
+          list-style-type: none
+          padding: 0
+          margin: 0
+          & a
+            width: 260px
+            height: 50px
+            box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.25)
+            text-align: center
+            display: flex
+            align-items: center
+            border: 1px solid $dark
+            background: $grey
+            letter-spacing: -0.02em
+            font-size: 14px
+            padding-left: 26px
+            margin-bottom: 3px
+            position: relative
+            border-left: 0
+            &:hover
+              color: $grey
+              border: 0
+              animation: filter_hover .1s
+              animation-fill-mode: forwards
+          & a:before
+            content: ''
+            width: 5px
+            height: 50px
+            position: absolute
+            left: 0
+            background: $red
+      .stock
+        display: flex
+        flex-direction: column
+        width: 100%
+        margin-top: 20px
+        .stock_title
+          font-weight: bold
+          color: $red
+          letter-spacing: -0.02em
+        .stock_info
+          font-size: 14px
+          line-height: 130.5%
+          letter-spacing: -0.02em
+  & h1
+    font-size: 24px
+    margin-left: 33px
+  .category_wrap
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: flex-start
+    .category_item
+      margin-left: 33px
+      margin-bottom: 33px
+  
