@@ -369,7 +369,7 @@ ul {
 }
 
 .category_item img {
-  width: 228px;
+  width: 100%;
 }
 
 .category_item .category_title {
