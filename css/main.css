@@ -446,13 +446,11 @@ ul {
 .item .item_price {
   text-align: right;
   color: #f6f6f6;
-  text-decoration: underline;
   font-weight: bold;
   position: absolute;
   right: 12px;
   bottom: 12px;
-  border-right: 2px solid #ce1257;
-  padding-right: 5px;
+  border-bottom: 2px solid #ce1257;
 }
 
 .fixed {
