@@ -129,20 +129,25 @@ ul
       left: 0
       cursor: pointer
       line-height: 120%
+      z-index: 2
   .item_hover
     display: none
   & img
-    width: 228px
+    width: 100%
   .item_title
     color: $grey
     font-weight: bold
     margin-top: 14px
   .item_price
     text-align: right
-    color: $red
+    color: $grey
+    text-decoration: underline
     font-weight: bold
-    margin-top: 14px
-
+    position: absolute
+    right: 12px
+    bottom: 12px
+    border-right: 2px solid $red
+    padding-right: 5px
 .fixed
   position: fixed
   width: 100%
@@ -577,11 +582,12 @@ section.payment
       flex-direction: column
       justify-content: space-between
       & a
-        color: $red
+        color: $grey
         flex-weight: bold
         cursor: pointer
         display: flex
         align-items: center
+        text-decoration: underline
         & svg
           margin-right: 10px
       .payment_text

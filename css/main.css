@@ -426,6 +426,7 @@ ul {
   left: 0;
   cursor: pointer;
   line-height: 120%;
+  z-index: 2;
 }
 
 .item .item_hover {
@@ -433,7 +434,7 @@ ul {
 }
 
 .item img {
-  width: 228px;
+  width: 100%;
 }
 
 .item .item_title {
@@ -444,9 +445,14 @@ ul {
 
 .item .item_price {
   text-align: right;
-  color: #ce1257;
+  color: #f6f6f6;
+  text-decoration: underline;
   font-weight: bold;
-  margin-top: 14px;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  border-right: 2px solid #ce1257;
+  padding-right: 5px;
 }
 
 .fixed {
@@ -1241,7 +1247,7 @@ section.payment .payment_wrap .payment_item {
 }
 
 section.payment .payment_wrap .payment_item a {
-  color: #ce1257;
+  color: #f6f6f6;
   flex-weight: bold;
   cursor: pointer;
   display: -webkit-box;
@@ -1250,6 +1256,7 @@ section.payment .payment_wrap .payment_item a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: underline;
 }
 
 section.payment .payment_wrap .payment_item a svg {
@@ -1718,7 +1725,7 @@ footer .container .employment, footer .container .copyright {
     height: 235px;
   }
   section.delivery {
-    background-position-x: -200px;
+    background-position-x: -100px;
   }
   section.payment .payment_wrap .payment_item .payment_text {
     font-size: 14px;
@@ -1847,6 +1854,13 @@ footer .container .employment, footer .container .copyright {
   .title {
     font-size: 24px;
   }
+  .item {
+    padding: 8px;
+  }
+  .item .item_price {
+    right: 8px;
+    bottom: 8px;
+  }
   form .label {
     font-size: 12px;
   }
@@ -1879,6 +1893,10 @@ footer .container .employment, footer .container .copyright {
   }
   section.payment .payment_wrap {
     margin-top: 40px;
+  }
+  section.payment .payment_wrap .payment_item a svg {
+    margin-right: 5px;
+    width: 12px;
   }
   section.reviews #reviews_slider .tns-item {
     padding: 0 30px;
