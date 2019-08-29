@@ -271,6 +271,7 @@ a:active,
 a:focus {
   text-decoration: none;
   color: #2b2b2b;
+  outline: none;
 }
 
 a:hover,
@@ -1851,6 +1852,9 @@ footer .container .employment, footer .container .copyright {
 @media screen and (max-width: 520px) {
   .title {
     font-size: 24px;
+  }
+  .category_item {
+    padding: 8px;
   }
   .item {
     padding: 8px;
