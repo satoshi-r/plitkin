@@ -789,34 +789,9 @@ header .bottom .container #leftdrop nav ul {
   position: relative;
 }
 
-header .bottom .container #leftdrop nav ul .close_offset {
-  position: absolute !important;
-  top: 60px !important;
-}
-
-header .bottom .container #leftdrop nav ul li:first-child {
-  position: absolute;
-  right: 0;
-  top: 15px;
-}
-
 header .bottom .container #leftdrop nav ul li {
   display: block !important;
   margin: 0;
-}
-
-header .bottom .container #leftdrop nav ul li #close {
-  -webkit-animation: alarm .5s 1;
-          animation: alarm .5s 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  display: block;
-  cursor: pointer;
-}
-
-header .bottom .container #leftdrop nav ul li #close img {
-  width: 24px;
-  height: 24px;
 }
 
 header .bottom .container #leftdrop nav ul li a {
@@ -829,6 +804,19 @@ header .bottom .container #leftdrop nav ul li a:hover {
 
 header .bottom .container #leftdrop nav ul li a:hover:after {
   display: none;
+}
+
+header .bottom .container #close {
+  -webkit-animation: alarm .5s 1;
+          animation: alarm .5s 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  right: 15px;
 }
 
 header .bottom .container #close img {

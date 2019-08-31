@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // прокрутка по якроям
   var $page = $('html, body');
-  $("a.anchor").click(function () {
+  $("li.anchor a, a.anchor").click(function () {
     var fixed_offset = 77;
     var w = $(window).width(); // Получаем ширину окна
     if (w <= 992) {
@@ -29,7 +29,7 @@ $(document).ready(function () {
     $('#leftdrop').css({ 'display': 'flex' });
     $('html').css({ 'overflow-y': 'hidden' });
   });
-  $('#close, #leftdrop .anchor').click(function closeMenu() {
+  $('#close, #leftdrop .anchor').click(function () {
     $('#leftdrop').slideUp();
     $('html').css({ 'overflow-y': 'auto' });
   });
