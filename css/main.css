@@ -975,11 +975,13 @@ section.first .slide_1 .container {
   height: 100%;
 }
 
-section.first h1 {
+section.first h1, section.first h2 {
   font-weight: bold;
   font-size: 42px;
   width: 700px;
   line-height: 140%;
+  text-align: left;
+  color: #f6f6f6;
 }
 
 section.first .description {
@@ -1525,7 +1527,7 @@ footer .container .employment, footer .container .copyright {
   section.first {
     height: calc(100vh - 108px);
   }
-  section.first h1 {
+  section.first h1, section.first h2 {
     font-size: 36px;
     width: 80%;
   }
@@ -1913,7 +1915,7 @@ footer .container .employment, footer .container .copyright {
         -ms-flex-pack: end;
             justify-content: end;
   }
-  section.first h1 {
+  section.first h1, section.first h2 {
     font-size: 24px;
     width: 100%;
   }
