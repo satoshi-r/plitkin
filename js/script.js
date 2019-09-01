@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // прокрутка по якроям
   var $page = $('html, body');
-  $("li.anchor a, a.anchor").click(function () {
+  $("ul.anchor a, a.anchor").click(function () {
     var fixed_offset = 77;
     var w = $(window).width(); // Получаем ширину окна
     if (w <= 992) {
@@ -34,6 +34,40 @@ $(document).ready(function () {
     $('html').css({ 'overflow-y': 'auto' });
   });
 
+  // ajax-form
+  var form = $('form'),
+      action = form.attr('action');
+
+  form.on('submit', function(event) {
+    var formData = {
+      contacts_name: $('#contacts_name').val(),
+      contacts_tel: $('#contacts_tel').val()
+    }
+
+    
+
+    $.ajax({
+      url: action,
+      type: 'POST',
+      data: formData,
+      beforeSend: function (data) {
+        form.find('button[type="submit"], input').attr('disabled', 'disabled');
+      },
+      error: function(request, txtstatus, errorThrown) {
+        console.log(request);
+        console.log(txtstatus);
+        console.log(errorThrown);
+      },
+      success: function () {
+        $('form button').html('Отправлено');
+        $('form input').val('');
+      }
+    })
+    
+    event.preventDefault();
+  });
+
+
   // filter_dropdown
   $('.filter_dropdown').click(function () {
     $('.filter').slideToggle(300);
@@ -62,3 +96,4 @@ var slider = tns({
   controlsContainer: '.controls_container',
   nav: false
 });
+
