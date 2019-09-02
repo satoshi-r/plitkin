@@ -908,6 +908,58 @@ header .bottom nav ul .current_page:after {
   display: block;
 }
 
+section.error {
+  background-image: url("../img/first_3.png");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+section.error .container {
+  height: 100%;
+}
+
+section.error .container .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  height: 100%;
+}
+
+section.error .container .wrap h1 {
+  font-weight: bold;
+  font-size: 42px;
+  width: 100%;
+  line-height: 140%;
+  text-align: left;
+  color: #f6f6f6;
+}
+
+section.error .container .wrap .first_btn {
+  color: #f6f6f6;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ce1257;
+  border-radius: 5px;
+  padding: 7px 30px;
+}
+
+section.error .container .wrap .first_btn:hover {
+  opacity: 0.8;
+}
+
 section.first {
   width: 100%;
   height: calc(100vh - 127px);

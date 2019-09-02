@@ -387,7 +387,39 @@ header
           right: 0
           background: $red
           display: block        
-            
+
+section.error
+  background-image: url('../img/first_3.png')
+  background-repeat: no-repeat
+  background-position-y: bottom
+  background-size: cover
+  height: 100vh
+  width: 100vw
+  .container
+    height: 100%
+    .wrap
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: start
+      height: 100%
+      & h1
+        font-weight: bold
+        font-size: 42px
+        width: 100%
+        line-height: 140%
+        text-align: left
+        color: $grey
+      .first_btn
+        color: $grey
+        font-size: 18px
+        font-weight: bold
+        background-color: $red
+        border-radius: 5px
+        padding: 7px 30px
+        &:hover
+          opacity: 0.8
+
 section.first
   width: 100%
   height: calc(100vh - 127px)
