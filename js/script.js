@@ -12,7 +12,8 @@ $(document).ready(function () {
     }, 400);
     return false;
   });
-
+  // запрет на вытягивание картинок
+  $("img, a").on("dragstart", function (event) { event.preventDefault(); });
   // меню
   $(window).scroll(function () {
     if ($(this).scrollTop() > 50) {
