@@ -1619,6 +1619,7 @@ footer .container .employment, footer .container .copyright {
   }
   .item img {
     width: 100%;
+    max-height: 140px;
   }
   .item .item_title {
     font-size: 16px;
@@ -1714,6 +1715,10 @@ footer .container .employment, footer .container .copyright {
   .item {
     height: 190px;
     width: 140px;
+    padding: 8px;
+  }
+  .item img {
+    max-height: 92px;
   }
   .item .item_title {
     font-size: 12px;
@@ -1721,6 +1726,8 @@ footer .container .employment, footer .container .copyright {
   }
   .item .item_price {
     font-size: 12px;
+    right: 8px;
+    bottom: 8px;
   }
   .item:hover .item_hover {
     font-size: 16px;
@@ -1898,13 +1905,6 @@ footer .container .employment, footer .container .copyright {
   }
   .category_item {
     padding: 8px;
-  }
-  .item {
-    padding: 8px;
-  }
-  .item .item_price {
-    right: 8px;
-    bottom: 8px;
   }
   form .label {
     font-size: 12px;

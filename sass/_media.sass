@@ -80,6 +80,7 @@
     width: 200px
     & img
       width: 100%
+      max-height: 140px
     .item_title
       font-size: 16px
 
@@ -168,15 +169,20 @@
   .item
     height: 190px
     width: 140px
+    padding: 8px
+    & img
+      max-height: 92px
     .item_title
       font-size: 12px
       margin-top: 0
     .item_price
       font-size: 12px
+      right: 8px
+      bottom: 8px
     &:hover
       .item_hover
         font-size: 16px
-
+      
   header
     .top
       .container
@@ -325,12 +331,6 @@
 
   .category_item
     padding: 8px
-
-  .item
-    padding: 8px
-    .item_price
-      right: 8px
-      bottom: 8px
 
   form
     .label
