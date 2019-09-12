@@ -1745,7 +1745,10 @@ footer .container .employment, footer .container .copyright {
     display: block;
   }
   section.first .slide_1 {
-    background-image: url("../img/first_3.png");
+    background-image: url("../img/first_adaptive3.png");
+  }
+  section.first .slide_2 {
+    background-image: url("../img/first_adaptive2.png");
   }
   section.first .slide_3 {
     background-image: url("../img/first_adaptive1.png");
