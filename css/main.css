@@ -1744,6 +1744,12 @@ footer .container .employment, footer .container .copyright {
   header .bottom .container #burger {
     display: block;
   }
+  section.first .slide_1 {
+    background-image: url("../img/first_3.png");
+  }
+  section.first .slide_3 {
+    background-image: url("../img/first_adaptive1.png");
+  }
   section.first h1 {
     font-size: 30px;
     width: 90%;
