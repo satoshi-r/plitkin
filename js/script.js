@@ -36,16 +36,14 @@ $(document).ready(function () {
   });
 
   // ajax-form
-  var form = $('form'),
+  let form = $('form'),
       action = form.attr('action');
 
   form.on('submit', function(event) {
-    var formData = {
+    let formData = {
       contacts_name: $('#contacts_name').val(),
       contacts_tel: $('#contacts_tel').val()
-    }
-
-    
+    };
 
     $.ajax({
       url: action,
@@ -63,11 +61,64 @@ $(document).ready(function () {
         $('form button').html('Отправлено');
         $('form input').val('');
       }
-    })
+    });
+    
+    event.preventDefault();
+  });
+  // форма заказа товара
+  form = $('.popup form'),
+  form.on('submit', function(event) {
+    let formData = {
+      order_name: $('#order_name').val().trim(),
+      order_tel: $('#order_tel').val().trim(),
+      order_email: $('#order_email').val().trim(),
+      order_message: $('#order_message').val().trim()
+    };
+
+    $.ajax({
+      url: action,
+      type: $(this).attr('method'),
+      data: formData,
+      beforeSend: function (data) {
+        form.find('button[type="submit"], input').attr('disabled', 'disabled');
+      },
+      error: function(request, txtstatus, errorThrown) {
+        console.log(request);
+        console.log(txtstatus);
+        console.log(errorThrown);
+      },
+      success: function () {
+        $('form button').html('Отправлено');
+        $('form input').val('');
+      }
+    });
     
     event.preventDefault();
   });
 
+  // modal
+  $('.popup-open').click(function () {
+    $('.popup-fade').fadeIn(100);
+    return false;
+  });
+
+  $('.popup-close').click(function () {
+    $(this).parents('.popup-fade').fadeOut(100);
+    return false;
+  });
+
+  $(document).keydown(function (e) {
+    if (e.keyCode === 27) {
+      e.stopPropagation();
+      $('.popup-fade').fadeOut(100);
+    }
+  });
+
+  $('.popup-fade').click(function (e) {
+    if ($(e.target).closest('.popup').length == 0) {
+      $(this).fadeOut(100);
+    }
+  });	
 
   // filter_dropdown
   $('.filter_dropdown').click(function () {

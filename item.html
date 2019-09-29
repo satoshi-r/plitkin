@@ -142,11 +142,6 @@
 
           <div class="item_description-wrap">
 
-            <div class="item_info">
-              <p>Заказать товар можно по<br>телефону +7 (930) 667-33-87.</p>
-              <a class="anchor" href=".delivery">Условия доставки</a>
-            </div>
-
             <div class="item_price">
               <div class="price_title">Цена за кв.м. :</div>
 
@@ -163,9 +158,51 @@
               </ul>
             </div>
 
+            <div class="item_info">
+              <a class="anchor" href=".delivery">Условия доставки</a>
+            </div>
+            <a href=".popup-fade" class="popup-open item_order">Заказать</a>
+
           </div>
+        </div>
 
+        <div class="popup-fade">
+          <div class="popup">
 
+            <a class="popup-close" href="#"><img src="img/cancel.svg" alt="x"></a>
+            <div class="form_title">Заказать</div>
+
+            <form action="">
+              <label for="order_name" class="input">
+                <input type="text" id="order_name" placeholder="&nbsp;" required>
+                <span class="label">Имя<sup>*</sup></span>
+                <span class="border"></span>
+              </label>
+            
+              <label for="order_tel" class="input">
+                <input type="tel" id="order_tel" placeholder="&nbsp;" required>
+                <span class="label">Телефон<sup>*</sup></span>
+                <span class="border"></span>
+              </label>
+            
+            
+              <label for="order_email" class="input">
+                <input type="email" id="order_email" placeholder="&nbsp;" required>
+                <span class="label">E-mail<sup>*</sup></span>
+                <span class="border"></span>
+              </label>
+            
+            
+              <label for="order_message" class="input">
+                <input type="text" id="order_message" placeholder="&nbsp;">
+                <span class="label">Комментарий</span>
+                <span class="border"></span>
+              </label>
+            
+              <button type="submit">Отправить</button>
+            </form>
+
+          </div>
         </div>
 
         <div class="item_specification-wrap">

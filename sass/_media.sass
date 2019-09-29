@@ -156,7 +156,16 @@
       & img
         margin-right: 0
       .item_info
-        margin-bottom: 20px
+        position: absolute
+        right: 0
+        bottom: 50px
+    .item_description-wrap
+      position: relative
+      .item_order
+        position: absolute
+        right: 0
+        bottom: 0
+        padding: 10px 0
 
 @media screen and (max-width: 768px)
   .category_item 
@@ -326,6 +335,8 @@
       .item_price
         .price_title
           font-size: 20px
+      .item_order
+        font-size: 16px
     .item_price,
     .item_specification-wrap
       font-size: 16px
@@ -442,9 +453,11 @@
     padding-bottom: 10px
     .hits_item-wrap
       flex-direction: row
-      flex-wrap: wrap
+      display: -webkit-box
+      overflow-x: auto
       .item
         margin-bottom: 20px
+        margin-right: 20px
 
   section.payment
     .payment_wrap
@@ -508,6 +521,11 @@
     .item_description-wrap
       .item_info
         font-size: 14px
+      .item_order
+        width: 115px
+        height: 36px
+        padding: 9px 0
+        font-size: 14px
     .item_price
       font-size: 14px
       .price_title
@@ -516,6 +534,9 @@
       font-size: 14px
       .specification_title
         font-size: 20px
+
+  .popup
+    width: 90%
 
 @media screen and (max-width: 360px)
   .title

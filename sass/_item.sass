@@ -28,7 +28,21 @@
         font-weight: bold
         color: $red
         letter-spacing: -0.02em
+    .item_order
+      color: $grey
+      font-size: 18px
+      background-color: $red
+      border-radius: 5px
+      width: 150px
+      height: 40px
+      padding: 7px 0
+      text-align: center
+      &:hover
+        opacity: 0.8
     .item_price
+      display: flex
+      flex-direction: column
+      flex-grow: 0.6
       .price_title
         font-size: 24px
         font-weight: bold
@@ -50,3 +64,53 @@
       margin-bottom: 2px
     & div:not(:first-child)
       margin-top: 14px
+
+
+.popup-fade
+  display: none
+  &:before
+    content: ''
+    background: $dark
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    opacity: 0.7
+    z-index: 9999
+.popup
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  margin: auto
+  height: 371px
+  padding: 20px
+  width: 360px
+  // margin-left: -200pxdark
+  background: $grey
+  border-radius: 5px
+  z-index: 99999
+  opacity: 1
+  .form_title
+    font-size: 20px
+    font-weight: bold
+  form
+    input
+      color: $dark
+      border-bottom: 1px solid $dark
+    .border
+      background: $dark
+    .label
+      color: $dark
+    .input
+      max-width: initial
+    
+.popup-close
+  position: absolute
+  top: 20px
+  right: 20px
+  img
+    width: 16px
+    height: 16px
