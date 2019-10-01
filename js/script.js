@@ -35,65 +35,93 @@ $(document).ready(function () {
     $('html').css({ 'overflow-y': 'auto' });
   });
 
-  // ajax-form
-  let form = $('form'),
-      action = form.attr('action');
+  // форма обратного звонка
+  const input_arr = ['contacts_name', 'contacts_tel', 'delivery_name', 'delivery_tel', 'order_name', 'order_tel', 'order_email'];
+  $('.delivery form, .contacts form').on('submit', function (e) {
+    let data = $(this).serialize(),
+      form = $(this),
+      action = $(this).attr('action'),
+      error = false; // индекс ошибки
 
-  form.on('submit', function(event) {
-    let formData = {
-      contacts_name: $('#contacts_name').val(),
-      contacts_tel: $('#contacts_tel').val()
-    };
+    form.find(":input").each(function () {// проверяем каждое поле в форме
+      for (var i = 0; i < input_arr.length; i++) { // если поле присутствует в списке обязательных
+        if ($(this).attr("name") == input_arr[i]) { //проверяем поле формы на пустоту
 
-    $.ajax({
-      url: action,
-      type: 'POST',
-      data: formData,
-      beforeSend: function (data) {
-        form.find('button[type="submit"], input').attr('disabled', 'disabled');
-      },
-      error: function(request, txtstatus, errorThrown) {
-        console.log(request);
-        console.log(txtstatus);
-        console.log(errorThrown);
-      },
-      success: function () {
-        $('form button').html('Отправлено');
-        $('form input').val('');
+          if (!$(this).val()) {// если в поле пустое
+            alert('Заполните все поля');
+            error = true;// определяем индекс ошибки      
+          }
+
+        }
       }
     });
-    
-    event.preventDefault();
+
+    if (!error) {
+      $.ajax({
+        url: action,
+        type: 'POST',
+        data: data,
+        beforeSend: function (data) {
+          form.find('button[type="submit"], input').attr('disabled', true);
+        },
+        error: function (request, txtstatus, errorThrown) {
+          console.log(request);
+          console.log(txtstatus);
+          console.log(errorThrown);
+        },
+        success: function () {
+          form.find('button').html('Отправлено');
+          form.find('input').val('');
+        }
+      });
+    }
+
+    e.preventDefault();
   });
-  // форма заказа товара
-  form = $('.popup form'),
-  form.on('submit', function(event) {
-    let formData = {
-      order_name: $('#order_name').val().trim(),
-      order_tel: $('#order_tel').val().trim(),
-      order_email: $('#order_email').val().trim(),
-      order_message: $('#order_message').val().trim()
-    };
 
-    $.ajax({
-      url: action,
-      type: $(this).attr('method'),
-      data: formData,
-      beforeSend: function (data) {
-        form.find('button[type="submit"], input').attr('disabled', 'disabled');
-      },
-      error: function(request, txtstatus, errorThrown) {
-        console.log(request);
-        console.log(txtstatus);
-        console.log(errorThrown);
-      },
-      success: function () {
-        $('form button').html('Отправлено');
-        $('form input').val('');
+
+  // форма заказа товара
+  $('.popup form').on('submit', function (e) {
+    let title_val = $('h1').text().trim(),
+      data = $(this).serialize() + '&order_title=' + title_val, //плюсую к данным формы название товара
+      form = $(this),
+      action = $(this).attr('action'),
+      error = false;
+
+    form.find(":input").each(function () {
+      for (var i = 0; i < input_arr.length; i++) {
+        if ($(this).attr("name") == input_arr[i]) {
+
+          if (!$(this).val()) {
+            alert('Заполните все поля');
+            error = true;
+          }
+
+        }
       }
     });
-    
-    event.preventDefault();
+
+    if (!error) {
+      $.ajax({
+        url: action,
+        type: 'POST',
+        data: data,
+        beforeSend: function (data) {
+          form.find('button[type="submit"], input').attr('disabled', true);
+        },
+        error: function (request, txtstatus, errorThrown) {
+          console.log(request);
+          console.log(txtstatus);
+          console.log(errorThrown);
+        },
+        success: function () {
+          form.find('button').html('Отправлено');
+          form.find('input').val('');
+        }
+      });
+    }
+
+    e.preventDefault();
   });
 
   // modal
