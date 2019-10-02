@@ -6,7 +6,7 @@ $(document).ready(function () {
     var w = $(window).width(); // Получаем ширину окна
     if (w <= 992) {
       fixed_offset = 57;
-    } else {}
+    } else { }
     $page.animate({
       scrollTop: $($.attr(this, 'href')).offset().top - fixed_offset
     }, 400);
@@ -35,6 +35,23 @@ $(document).ready(function () {
     $('html').css({ 'overflow-y': 'auto' });
   });
 
+  // подсказки для формы
+  $('.input').each(function () {
+    $(this).attr('data-tooltip', 'false');
+  });
+
+  function tooltipError(indexError, input) {
+    if (indexError) {
+      let wrap = input.parent();
+      wrap.attr('data-tooltip', 'true');
+    } else if (input != false) {
+      let wrap = input.parent();
+      wrap.attr('data-tooltip', 'false');
+    } else {
+      return false;
+    }
+  }
+
   // форма обратного звонка
   const input_arr = ['contacts_name', 'contacts_tel', 'delivery_name', 'delivery_tel', 'order_name', 'order_tel', 'order_email'];
   $('.delivery form, .contacts form').on('submit', function (e) {
@@ -47,16 +64,22 @@ $(document).ready(function () {
       for (var i = 0; i < input_arr.length; i++) { // если поле присутствует в списке обязательных
         if ($(this).attr("name") == input_arr[i]) { //проверяем поле формы на пустоту
 
-          if (!$(this).val()) {// если в поле пустое
-            alert('Заполните все поля');
-            error = true;// определяем индекс ошибки      
+          if (!$(this).val()) { // если поле пустое
+            error = true; // определяем индекс ошибки
+            tooltipError(error, $(this));
           }
-
+          $(this).on("focus", function () {
+            error = false;
+            tooltipError(error, $(this));
+          });
         }
+
       }
     });
 
     if (!error) {
+      tooltipError(error, false);
+
       $.ajax({
         url: action,
         type: 'POST',
@@ -89,19 +112,25 @@ $(document).ready(function () {
       error = false;
 
     form.find(":input").each(function () {
-      for (var i = 0; i < input_arr.length; i++) {
-        if ($(this).attr("name") == input_arr[i]) {
+      for (var i = 0; i < input_arr.length; i++) { 
+        if ($(this).attr("name") == input_arr[i]) { 
 
-          if (!$(this).val()) {
-            alert('Заполните все поля');
+          if (!$(this).val()) { 
             error = true;
+            tooltipError(error, $(this));
           }
-
+          $(this).on("focus", function () {
+            error = false;
+            tooltipError(error, $(this));
+          });
         }
+
       }
     });
 
     if (!error) {
+      tooltipError(error, false);
+
       $.ajax({
         url: action,
         type: 'POST',
@@ -146,7 +175,7 @@ $(document).ready(function () {
     if ($(e.target).closest('.popup').length == 0) {
       $(this).fadeOut(100);
     }
-  });	
+  });
 
   // filter_dropdown
   $('.filter_dropdown').click(function () {
