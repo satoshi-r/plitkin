@@ -1,4 +1,4 @@
 # plitkin
-frontend for the sale of paving slabs
+Верстка сайта по продаже плитки
 
 https://satoshi-r.github.io/plitkin/
