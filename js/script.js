@@ -36,20 +36,20 @@ $(document).ready(function () {
   });
 
   // подсказки для формы
-  $('.input').each(function () {
-    $(this).attr('data-tooltip', 'false');
-  });
-
   function tooltipError(indexError, input) {
     if (indexError) {
       let wrap = input.parent();
       wrap.attr('data-tooltip', 'true');
     } else if (input != false) {
       let wrap = input.parent();
-      wrap.attr('data-tooltip', 'false');
+      wrap.attr('data-tooltip', 'false');      
     } else {
       return false;
     }
+  }
+
+  function alertSuccess(selector) {
+    selector.find('.alert_success').fadeIn().css('display', 'flex');
   }
 
   // форма обратного звонка
@@ -91,6 +91,7 @@ $(document).ready(function () {
           console.log(request);
           console.log(txtstatus);
           console.log(errorThrown);
+          alertSuccess(form);
         },
         success: function () {
           form.find('button').html('Отправлено');
