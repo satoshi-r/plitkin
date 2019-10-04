@@ -49,6 +49,13 @@ $(document).ready(function () {
   }
 
   function alertSuccess(selector) {
+    selector.find('button[type="submit"]').hide();
+    $('<div class="form_alert alert_success"><img src="img/success.svg" alt="success"><span>Заявка принята! Наш менеджер свяжется с Вами в течение 10 минут.</span></div>').appendTo(selector);
+    selector.find('.alert_success').fadeIn().css('display', 'flex');
+  }
+
+  function alertError(selector) {
+    $('<div class="form_alert alert_error"><img src="img/error.svg" alt="error"><span>Ошибка! Попробуйте ещё разок.</span></div>').appendTo(selector);
     selector.find('.alert_success').fadeIn().css('display', 'flex');
   }
 
