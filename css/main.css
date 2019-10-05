@@ -819,6 +819,11 @@ form .alert_error {
   display: none;
 }
 
+form .alert_success a,
+form .alert_error a {
+  text-decoration: underline;
+}
+
 .fade_in {
   -webkit-animation: fade_in .5s ease-in;
           animation: fade_in .5s ease-in;
@@ -1690,6 +1695,13 @@ section.contacts #contacts_map .contacts_form form button {
   background-color: #08415c;
 }
 
+section.contacts #contacts_map .contacts_form form .form_alert {
+  background-color: #08415c;
+  border-radius: 5px;
+  color: #f6f6f6;
+  padding: 10px;
+}
+
 footer .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2140,6 +2152,9 @@ footer .container .employment, footer .container .copyright {
     font-size: 12px;
     width: 130px;
     height: 36px;
+  }
+  form .form_alert {
+    font-size: 10px;
   }
   header .top .container .employment {
     max-width: 150px;

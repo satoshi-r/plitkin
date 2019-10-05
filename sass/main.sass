@@ -294,7 +294,8 @@ form
   .alert_success,
   .alert_error
     display: none
-  
+    a
+      text-decoration: underline
 
 
 .fade_in
@@ -794,6 +795,11 @@ section.contacts
           max-width: initial
         & button
           background-color: $blue
+        .form_alert
+          background-color: $blue
+          border-radius: 5px
+          color: $grey
+          padding: 10px
       
 footer
   .container

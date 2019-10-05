@@ -49,16 +49,24 @@ $(document).ready(function () {
   }
 
   function alertSuccess(selector) {
+    let alert = $('<div class="form_alert alert_success"><img src="img/success.svg" alt="success"><span>Заявка принята! Наш менеджер свяжется с Вами в течение 10 минут.</span></div>');
     selector.find('button[type="submit"]').hide();
-    $('<div class="form_alert alert_success"><img src="img/success.svg" alt="success"><span>Заявка принята! Наш менеджер свяжется с Вами в течение 10 минут.</span></div>').appendTo(selector);
+    alert.appendTo(selector);
     selector.find('.alert_success').fadeIn().css('display', 'flex');
   }
 
   function alertError(selector) {
-    $('<div class="form_alert alert_error"><img src="img/error.svg" alt="error"><span>Ошибка! Попробуйте ещё разок.</span></div>').appendTo(selector);
-    selector.find('.alert_success').fadeIn().css('display', 'flex');
+    let alert = $('<div class="form_alert alert_error"><img src="img/error.svg" alt="error"><span>Ошибка!&nbsp;<a href="">Обновите страницу.</a></span></div>');
+    selector.find('button[type="submit"]').hide();
+    alert.appendTo(selector);
+    selector.find('.alert_error').fadeIn().css('display', 'flex');
+
+    alert.find('a').click(function () {
+      location.reload();
+    });
   }
 
+  
   // форма обратного звонка
   const input_arr = ['contacts_name', 'contacts_tel', 'delivery_name', 'delivery_tel', 'order_name', 'order_tel', 'order_email'];
   $('.delivery form, .contacts form').on('submit', function (e) {
@@ -98,10 +106,10 @@ $(document).ready(function () {
           console.log(request);
           console.log(txtstatus);
           console.log(errorThrown);
-          alertSuccess(form);
+          alertError(form);
         },
         success: function () {
-          form.find('button').html('Отправлено');
+          alertSuccess(form);
           form.find('input').val('');
         }
       });
@@ -139,7 +147,7 @@ $(document).ready(function () {
     if (!error) {
       tooltipError(error, false);
 
-      $.ajax({
+     $.ajax({
         url: action,
         type: 'POST',
         data: data,
@@ -150,9 +158,10 @@ $(document).ready(function () {
           console.log(request);
           console.log(txtstatus);
           console.log(errorThrown);
+          alertError(form);
         },
         success: function () {
-          form.find('button').html('Отправлено');
+          alertSuccess(form);
           form.find('input').val('');
         }
       });
