@@ -622,6 +622,31 @@ ymaps {
   transition: none;
 }
 
+@-webkit-keyframes fade_in {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 1;
+  }
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+  }
+}
+
 form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -760,6 +785,48 @@ form input:focus + span {
 form input:focus + span + .border {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
+}
+
+form .form_alert {
+  margin-top: 40px;
+  font-size: 12px;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+form .form_alert img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+form .form_alert span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form .alert_success,
+form .alert_error {
+  display: none;
+}
+
+form .alert_success a,
+form .alert_error a {
+  text-decoration: underline;
+}
+
+.fade_in {
+  -webkit-animation: fade_in .5s ease-in;
+          animation: fade_in .5s ease-in;
 }
 
 header {
@@ -1360,7 +1427,6 @@ section.delivery #delivery_form {
   border-radius: 5px;
   padding: 32px;
   width: 350px;
-  height: 280px;
   color: #f6f6f6;
   padding-bottom: 24px;
   text-align: center;
@@ -1627,6 +1693,13 @@ section.contacts #contacts_map .contacts_form form .input {
 
 section.contacts #contacts_map .contacts_form form button {
   background-color: #08415c;
+}
+
+section.contacts #contacts_map .contacts_form form .form_alert {
+  background-color: #08415c;
+  border-radius: 5px;
+  color: #f6f6f6;
+  padding: 10px;
 }
 
 footer .container {
@@ -2079,6 +2152,9 @@ footer .container .employment, footer .container .copyright {
     font-size: 12px;
     width: 130px;
     height: 36px;
+  }
+  form .form_alert {
+    font-size: 10px;
   }
   header .top .container .employment {
     max-width: 150px;

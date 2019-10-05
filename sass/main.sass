@@ -175,7 +175,13 @@ ul
 
 ymaps
   transition: none
-
+@keyframes fade_in
+  0%
+    opacity: 0
+    display: none
+  100%
+    display: flex
+    opacity: 1
 form
   display: flex
   flex-direction: column
@@ -273,7 +279,27 @@ form
         transform: translateY(-12px) scale(0.75)
         + .border
           transform: scaleX(1)
+  .form_alert
+    margin-top: 40px
+    font-size: 12px
+    text-align: left
+    display: flex
+    user-select: none
+    img
+      width: 20px
+      margin-right: 5px
+    span
+      display: flex
+      align-items: center
+  .alert_success,
+  .alert_error
+    display: none
+    a
+      text-decoration: underline
 
+
+.fade_in
+  animation: fade_in .5s ease-in
 
 header
   width: 100%
@@ -608,7 +634,7 @@ section.delivery
     border-radius: 5px
     padding: 32px
     width: 350px
-    height: 280px
+    // height: 280px
     color: $grey
     padding-bottom: 24px
     text-align: center
@@ -769,6 +795,11 @@ section.contacts
           max-width: initial
         & button
           background-color: $blue
+        .form_alert
+          background-color: $blue
+          border-radius: 5px
+          color: $grey
+          padding: 10px
       
 footer
   .container
