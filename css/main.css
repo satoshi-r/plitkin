@@ -622,31 +622,6 @@ ymaps {
   transition: none;
 }
 
-@-webkit-keyframes fade_in {
-  0% {
-    opacity: 0;
-    display: none;
-  }
-  100% {
-    display: -webkit-box;
-    display: flex;
-    opacity: 1;
-  }
-}
-
-@keyframes fade_in {
-  0% {
-    opacity: 0;
-    display: none;
-  }
-  100% {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    opacity: 1;
-  }
-}
-
 form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -800,11 +775,6 @@ form .form_alert {
           user-select: none;
 }
 
-form .form_alert img {
-  width: 20px;
-  margin-right: 5px;
-}
-
 form .form_alert span {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -822,11 +792,23 @@ form .alert_error {
 form .alert_success a,
 form .alert_error a {
   text-decoration: underline;
+  color: #f6f6f6;
 }
 
-.fade_in {
-  -webkit-animation: fade_in .5s ease-in;
-          animation: fade_in .5s ease-in;
+form .alert_success:before {
+  content: url("../img/success.svg");
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  display: table;
+}
+
+form .alert_error:before {
+  content: url("../img/error.svg");
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  display: table;
 }
 
 header {

@@ -175,13 +175,7 @@ ul
 
 ymaps
   transition: none
-@keyframes fade_in
-  0%
-    opacity: 0
-    display: none
-  100%
-    display: flex
-    opacity: 1
+
 form
   display: flex
   flex-direction: column
@@ -285,9 +279,6 @@ form
     text-align: left
     display: flex
     user-select: none
-    img
-      width: 20px
-      margin-right: 5px
     span
       display: flex
       align-items: center
@@ -296,10 +287,20 @@ form
     display: none
     a
       text-decoration: underline
+      color: $grey
+  .alert_success:before
+    content: url('../img/success.svg')
+    width: 20px
+    height: 20px
+    margin-right: 5px
+    display: table
+  .alert_error:before
+    content: url('../img/error.svg')
+    width: 20px
+    height: 20px
+    margin-right: 5px
+    display: table
 
-
-.fade_in
-  animation: fade_in .5s ease-in
 
 header
   width: 100%

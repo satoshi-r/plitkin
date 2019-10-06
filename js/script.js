@@ -49,14 +49,14 @@ $(document).ready(function () {
   }
 
   function alertSuccess(selector) {
-    let alert = $('<div class="form_alert alert_success"><img src="img/success.svg" alt="success"><span>Заявка принята! Наш менеджер свяжется с Вами в течение 10 минут.</span></div>');
+    let alert = $('<div class="form_alert alert_success"><span>Заявка принята! Наш менеджер свяжется с Вами в течение 10 минут.</span></div>');
     selector.find('button[type="submit"]').hide();
     alert.appendTo(selector);
     selector.find('.alert_success').fadeIn().css('display', 'flex');
   }
 
   function alertError(selector) {
-    let alert = $('<div class="form_alert alert_error"><img src="img/error.svg" alt="error"><span>Ошибка!&nbsp;<a href="">Обновите страницу.</a></span></div>');
+    let alert = $('<div class="form_alert alert_error"><span>Ошибка!&nbsp;<a href="">Обновите страницу.</a></span></div>');
     selector.find('button[type="submit"]').hide();
     alert.appendTo(selector);
     selector.find('.alert_error').fadeIn().css('display', 'flex');
