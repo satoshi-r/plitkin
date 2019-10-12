@@ -1,27 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
-html, body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  color: #2b2b2b;
-}
-
-h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  font-size: 36px;
-  text-align: center;
-  color: #2b2b2b;
-}
-
-.btn {
-  width: 150px;
-  height: 40px;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 14px;
-}
-
 @-webkit-keyframes filter_hover {
   0% {
     background: #f6f6f6;
@@ -30,7 +8,6 @@ h2 {
     background: #ce1257;
   }
 }
-
 @keyframes filter_hover {
   0% {
     background: #f6f6f6;
@@ -309,7 +286,7 @@ section.category .category_wrap .category_item {
   width: 360px;
   background: #f6f6f6;
   border-radius: 5px;
-  z-index: 99999;
+  z-index: 10000;
   opacity: 1;
 }
 
@@ -352,6 +329,12 @@ html {
   -ms-overflow-style: scrollbar;
 }
 
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #2b2b2b;
+}
+
 *,
 *::before,
 *::after {
@@ -377,6 +360,22 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  color: #2b2b2b;
+}
+
+.btn {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
 }
 
 .container {
@@ -659,6 +658,7 @@ form .input {
 
 form .input:before {
   content: 'Заполните это поле';
+  text-align: center;
   width: 132px;
   height: 24px;
   background-color: #f6f6f6;
@@ -670,6 +670,7 @@ form .input:before {
   right: 0;
   -webkit-box-shadow: 0px 4px 10px rgba(104, 117, 134, 0.15);
           box-shadow: 0px 4px 10px rgba(104, 117, 134, 0.15);
+  z-index: 10002;
 }
 
 form .input:after {
@@ -680,6 +681,7 @@ form .input:after {
   border-bottom-color: #f6f6f6;
   right: 0px;
   bottom: -12px;
+  z-index: 10001;
 }
 
 form .input:after, form .input:before {
