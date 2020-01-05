@@ -40,9 +40,9 @@
         <nav>
           <ul>
             <li><a href="index.html">Главная</a></li>
-            <li><a class="current_page" href=".header">Каталог</a></li>
-            <li><a href=".delivery">Доставка</a></li>
-            <li><a href=".contacts">Контакты</a></li>
+            <li><a class="anchor current_page" href=".header">Каталог</a></li>
+            <li><a class="anchor" href=".delivery">Доставка</a></li>
+            <li><a class="anchor" href=".contacts">Контакты</a></li>
           </ul>
         </nav>
 
@@ -56,7 +56,7 @@
             <nav>
               <ul>
                 <li><a id="close"><img src="img/close.svg" alt="X"></a></li>
-                <li><a class="anchor" href=".header" class="current_page">Главная</a></li>
+                <li><a class="anchor" href=".header">Главная</a></li>
                 <li><a class="anchor" href="category.html">Каталог</a></li>
                 <li><a class="anchor" href=".delivery">Доставка</a></li>
                 <li><a class="anchor" href=".contacts">Контакты</a></li>
@@ -186,7 +186,7 @@
 
   <section class="hits">
     <div class="container">
-      <div class="title">ПОПУЛЯРНЫЕ ТОВАРЫ</div>
+      <h2 class="title">ПОПУЛЯРНЫЕ ТОВАРЫ</h2>
 
       <div class="hits_item-wrap">
 
@@ -218,7 +218,7 @@
   <section class="delivery">
 
     <div class="container">
-      <div class="title">ДОСТАВКА</div>
+      <h2 class="title">ДОСТАВКА</h2>
       <div class="delivery_text">
         Доставка по Нижнему Новгороду и области возможна с помощью транспорта компании, так же у нас есть самовывоз.
       </div>
@@ -229,7 +229,7 @@
 
       <div id="delivery_form">
         <div class="form_title">ЗАДАТЬ ВОПРОС</div>
-        <form action="">
+        <form action="javascript:void(0)">
           <label for="delivery_name" class="input" data-tooltip="false">
             <input name="delivery_name" type="text" id="delivery_name" class="contacts_name" placeholder="&nbsp;">
             <span class="label">Имя</span>

@@ -1394,6 +1394,7 @@ section.delivery {
 
 section.delivery .title {
   color: #f6f6f6;
+  text-align: left;
 }
 
 section.delivery .delivery_text {
